@@ -391,13 +391,13 @@ variable "client_secret" {
 
 variable "cluster_log_analytics_workspace_name" {
   type        = string
-  default     = null
+  default     = "law-test-aks"
   description = "(Optional) The name of the Analytics workspace"
 }
 
 variable "cluster_name" {
   type        = string
-  default     = null
+  default     = "terraform-aks"
   description = "(Optional) The name for the AKS resources created in the specified Azure Resource Group. This variable overwrites the 'prefix' var (The 'prefix' var will still be applied to the dns_prefix if it is set)"
 }
 
@@ -1225,7 +1225,7 @@ variable "pod_subnet_id" {
 
 variable "prefix" {
   type        = string
-  default     = ""
+  default     = "aksdns01"
   description = "(Optional) The prefix for the resources created in the specified Azure Resource Group. Omitting this variable requires both `var.cluster_log_analytics_workspace_name` and `var.cluster_name` have been set."
   nullable    = false
 }
@@ -1288,7 +1288,7 @@ variable "rbac_aad_tenant_id" {
 
 variable "role_based_access_control_enabled" {
   type        = bool
-  default     = false
+  default     = true
   description = "Enable Role Based Access Control."
   nullable    = false
 }

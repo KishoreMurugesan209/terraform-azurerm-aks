@@ -20,3 +20,15 @@ terraform {
     }
   }
 }
+
+provider "azurerm" {
+  subscription_id = "3a194d6c-2d4d-42d4-b1c5-7ffcf8788cfc"
+  features {
+    key_vault {
+      purge_soft_delete_on_destroy = true
+    }
+    resource_group {
+      prevent_deletion_if_contains_resources = false
+    }
+  }
+}
